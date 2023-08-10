@@ -211,3 +211,41 @@ form .btn {
     max-width: 10rem;
     margin-top: 1rem;
 }
+
+.race {
+    margin: 5rem auto 0;
+}
+
+.race-container {
+    display: flex;
+    gap: 2rem;
+    margin: 0 auto;
+    justify-content: center;
+    place-items: center;
+}
+
+.race-container > .btn {
+    height: 4rem;
+    width: 15rem;
+    font-size: 1.8rem;
+}
+
+.race > h2.heading-text {
+    margin: 0 auto;
+}
+
+.race-snail .heading-text {
+    font-size: 1.8rem;
+    margin: 0 auto;
+}
+
+.race-snail {
+    border: 3px solid var(--grey);
+    border-radius: 10px;
+    width: 20rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}

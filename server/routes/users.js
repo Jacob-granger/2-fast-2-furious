@@ -38,7 +38,7 @@ router.get('/test/snail/race', (req, res) => {
 })
 
 router.get('/test/snail/race-result', (req, res) => {
-  res.render('race-result')
+  res.render('race.hbs-result')
 })
 
 
