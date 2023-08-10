@@ -24,7 +24,7 @@
       <select name='racer1Attribute' class='btn'>
         <option value='' selected>Attribute</option>
         {{#each attributes}}
-          <option value='{{name}}'>{{name}}</option>
+          <option value='{{this}}'>{{this}}</option>
         {{/each}}
       </select>
       </label>
@@ -51,7 +51,7 @@
         <select name='racer2Attribute' class='btn'>
           <option value='' selected>Attribute</option>
           {{#each attributes}}
-            <option value='{{name}}'>{{name}}</option>
+            <option value='{{this}}'>{{this}}</option>
           {{/each}}
         </select>
       </label>

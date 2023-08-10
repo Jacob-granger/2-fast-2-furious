@@ -11,8 +11,18 @@ export async function getAllSnails() {
 
 export async function getSnail(id) {
   return connection('snails')
-  .where('id', id)
-  .first()
+    .where('id', id)
+    .select(
+      'id',
+      'image',
+      'top_speed as topSpeed',
+      'engine_size as engineSize',
+      'cool_factor as coolFactor',
+      'innovation',
+      'year_launched as year',
+      'name'
+    )
+    .first()
   //Add join
 }
 
@@ -20,8 +30,6 @@ export async function getSnail(id) {
 //   return connection('snails').select('name')
 // }
 
-export function  getSnailAttribute(id, attribute) {
-  return connection('snails')
-  .where('id', id)
-  .select(attribute)
+export function getSnailAttribute(id, attribute) {
+  return connection('snails').where('id', id).select(attribute)
 }
