@@ -3,23 +3,60 @@
 <main class='race'>
   <h2 class='heading-text'>READY, SET...</h2>
 
-  <div class='race-container'>
+  <form class='race-container' method='post' action='#'>
     <div class='race-snail'>
       <img src='/snail.png' class='snail-img' alt='A really fast snail'>
-      <h3 class='heading-text'>RACER NAME</h3>
-      <button class='btn'>PLACEHOLDER</button>
-      <button class='btn'>PLACEHOLDER</button>
+      <h3 class='heading-text'>RACER 1</h3>
+
+      <label>
+        <!-- retains visibility for screenreaders-->
+        <span style='height: 0; overflow: hidden'>RACER 1:</span>
+        <select name='racer1' class='btn'>
+          <option value='' selected>Chosen Snail</option>
+          {{#each racers}}
+            <option value='{{name}}'>{{name}}</option>
+          {{/each}}
+        </select>
+      </label>
+      <label>
+        <!-- retains visibility for screenreaders-->
+        <span style='height: 0; overflow: hidden'>ATTRIBUTE:</span>
+      <select name='racer1Attribute' class='btn'>
+        <option value='' selected>Attribute</option>
+        {{#each attributes}}
+          <option value='{{name}}'>{{name}}</option>
+        {{/each}}
+      </select>
+      </label>
     </div>
 
-    <button class='btn btn-big'>RACE!</button>
+    <button type='submit' class='btn btn-big'>RACE!</button>
 
     <div class='race-snail'>
       <img src='/snail.png' class='snail-img' alt='A really fast snail'>
-      <h3 class='heading-text'>RACER NAME</h3>
-      <button class='btn'>PLACEHOLDER</button>
-      <button class='btn'>PLACEHOLDER</button>
+      <h3 class='heading-text'>RACER 2</h3>
+      <label>
+        <!-- retains visibility for screenreaders-->
+        <span style='height: 0; overflow: hidden'>RACER 2:</span>
+        <select name='racer2' class='btn'>
+          <option value='' selected>Chosen Snail</option>
+          {{#each racers}}
+            <option value='{{name}}'>{{name}}</option>
+          {{/each}}
+        </select>
+      </label>
+      <label>
+        <!-- retains visibility for screenreaders-->
+        <span style='height: 0; overflow: hidden'>ATTRIBUTE:</span>
+        <select name='racer2Attribute' class='btn'>
+          <option value='' selected>Attribute</option>
+          {{#each attributes}}
+            <option value='{{name}}'>{{name}}</option>
+          {{/each}}
+        </select>
+      </label>
     </div>
 
-  </div>
+  </form>
 
 </main>
