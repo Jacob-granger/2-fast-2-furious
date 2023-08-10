@@ -30,7 +30,7 @@ router.get('/test/snail/edit', (req, res) => {
 })
 
 router.get('/test/snail/new', (req, res) => {
-  res.render('snail-new')
+  res.render('snail-new.hbs')
 })
 
 router.get('/test/snail/race', (req, res) => {

@@ -183,5 +183,31 @@ a {
 }
 
 .page-box > img {
-    width: 20rem;
+    width: 16rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+input[type='text'] {
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    border: 2px solid var(--grey);
+}
+
+form .btn {
+    max-width: 10rem;
+    margin-top: 1rem;
 }
