@@ -1,0 +1,56 @@
+{{>header}}
+
+<main class='page-box'>
+  {{#if image}}
+    <img src='{{image}}' class='snail-img' alt='An image of {{name}}'>
+  {{else}}
+    <img src='/snail.png' class='snail-img' alt='A really fast snail'>
+  {{/if}}
+  <form method='post' action='#'>
+
+    <label style='display: none'>
+      Id
+      <input type='text' disabled value='{{id}}'>
+    </label>
+
+    <label>
+      Image
+      <input type='text' name='image' value='{{image}}'>
+    </label>
+
+    <label>
+      Name
+      <input type='text' name='name' value='{{name}}'>
+    </label>
+
+    <label>
+      Top Speed
+      <input type='number' name='topSpeed' value='{{topSpeed}}'>
+    </label>
+
+    <label>
+      Engine Size
+      <input type='number' name='engineSize' value='{{engineSize}}'>
+    </label>
+
+    <label>
+      Cool Factor
+      <input type='number' name='coolFactor' value='{{coolFactor}}'>
+    </label>
+
+    <label>
+      Innovation
+      <input type='number' name='innovation' value='{{innovation}}'>
+    </label>
+
+    <label>
+      Year Launched
+      <input type='number' name='year' value='{{year}}'>
+    </label>
+
+
+    <button type='submit' class='btn'>Initialize</button>
+
+  </form>
+
+</main>
