@@ -38,22 +38,54 @@ router.get('/test/snail/:id', async (req, res, next) => {
   
 })
 
+// stretch
 router.get('/test/snail/edit', (req, res) => {
   res.render('snail-edit')
 })
 
+// stretch
 router.get('/test/snail/new', (req, res) => {
   res.render('snail-new.hbs')
 })
 
-router.get('/test/snail/race', (req, res) => {
-  res.render('race')
+
+router.get('/test/snail/race', async (req, res, next) => {
+  try {
+    const racers = await db.getAllSnails()
+
+    const viewData = {
+      racers,
+      attributes: ['top_speed', 'engine_size', 'cool_factor', 'innovation', 'year']
+    }
+    res.render('race', viewData)
+  } catch (e) {
+    next(e)
+  }
+})
+
+router.post('/snail/race', async (req, res, next) => {
+const raceFormResult = req.body 
+try {
+  const val1 = await getSnailAttribute(req.body.racer1, req.body.racer1Attribute)
+  const val2 = await getSnailAttribute(req.body.racer2, req.body.racer2Attribute) 
+
+} catch (e) {
+ next(e)
+}
+
+
 })
 
 router.get('/test/snail/race-result', (req, res) => {
   res.render('race-result')
 })
 
-
+function checkForWinner (val1, val2) {
+  if (val1 > val2) {
+    return 'Player 1 wins'
+  } else {
+    return 'Player 2 wins'
+  }
+}
 
 export default router
