@@ -13,4 +13,34 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/test/home', (req, res) => {
+  res.render('home')
+})
+
+router.get('/test/snails', (req, res) => {
+  res.render('snails')
+})
+
+router.get('/test/snail', (req, res) => {
+  res.render('snail')
+})
+
+router.get('/test/snail/edit', (req, res) => {
+  res.render('edit-snail')
+})
+
+router.get('/test/snail/new', (req, res) => {
+  res.render('snail-new')
+})
+
+router.get('/test/snail/race', (req, res) => {
+  res.render('race')
+})
+
+router.get('/test/snail/race-result', (req, res) => {
+  res.render('race-result')
+})
+
+
+
 export default router
