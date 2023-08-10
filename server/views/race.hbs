@@ -3,7 +3,7 @@
 <main class='race'>
   <h2 class='heading-text'>READY, SET...</h2>
 
-  <form class='race-container' method='post' action='#'>
+  <form class='race-container' method='post' action='/snail/race'>
     <div class='race-snail'>
       <img src='/snail.png' class='snail-img' alt='A really fast snail'>
       <h3 class='heading-text'>RACER 1</h3>
@@ -14,7 +14,7 @@
         <select name='racer1' class='btn'>
           <option value='' selected>Chosen Snail</option>
           {{#each racers}}
-            <option value='{{name}}'>{{name}}</option>
+            <option value='{{id}}'>{{name}}</option>
           {{/each}}
         </select>
       </label>
@@ -41,7 +41,7 @@
         <select name='racer2' class='btn'>
           <option value='' selected>Chosen Snail</option>
           {{#each racers}}
-            <option value='{{name}}'>{{name}}</option>
+            <option value='{{id}}'>{{name}}</option>
           {{/each}}
         </select>
       </label>
