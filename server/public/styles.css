@@ -50,7 +50,7 @@ header {
 }
 
 .main-img {
-    max-width: 20rem;
+    max-width: 26rem;
     margin: 0 auto;
 }
 
@@ -138,8 +138,8 @@ a {
 .snail {
     border: 3px solid var(--grey);
     border-radius: 10px;
-    width: 13rem;
-    height: 18rem;
+    width: 15rem;
+    height: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -153,6 +153,8 @@ a {
 
 .snail-img {
     width: 10rem;
+    height: 12rem;
+    object-fit: cover;
     margin: 0 auto;
 }
 
@@ -185,6 +187,8 @@ a {
 
 .page-box > img {
     width: 16rem;
+    height: 18rem;
+    object-fit: cover;
 }
 
 form {
@@ -261,6 +265,8 @@ form .btn {
 
 .result img {
     width: 16rem;
+    height: 18rem;
+    object-fit: cover;
     margin: 0 auto;
 }
 
