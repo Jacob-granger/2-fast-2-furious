@@ -22,7 +22,7 @@ router.get('/test/snails', (req, res) => {
 })
 
 router.get('/test/snail', (req, res) => {
-  res.render('snail')
+  res.render('snail-page')
 })
 
 router.get('/test/snail/edit', (req, res) => {

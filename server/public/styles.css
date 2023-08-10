@@ -154,3 +154,34 @@ a {
     width: 10rem;
     margin: 0 auto;
 }
+
+.page-box {
+    border: 3px solid var(--grey);
+    border-radius: 10px;
+    height: 40rem;
+    width: 50rem;
+    margin: 5rem auto 0;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.page-box img, .page-box h2, .page-box .stats {
+    margin: 0 auto;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stats p {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.page-box > img {
+    width: 20rem;
+}
