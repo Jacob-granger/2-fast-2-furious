@@ -26,7 +26,7 @@ router.get('/test/snail', (req, res) => {
 })
 
 router.get('/test/snail/edit', (req, res) => {
-  res.render('edit-snail')
+  res.render('snail-edit')
 })
 
 router.get('/test/snail/new', (req, res) => {
