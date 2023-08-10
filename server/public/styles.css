@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --grey: #E5E5E5;
+    --darker-grey: #D9D9D9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.title {
+    flex-shrink: 0;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    margin: 5rem auto 0;
+}
+
+.title > h1 {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+.title > h1:last-child {
+    place-self: flex-end;
+}
+
+.small {
+    width: 12rem;
+    margin: 0;
+}
+
+.small h1 {
+    font-size: 1.5rem;
+}
+
+header {
+    padding: 1rem 3rem;
+    border-bottom: 3px solid var(--grey);
+}
+
+.main-img {
+    max-width: 20rem;
+    margin: 0 auto;
+}
+
+.btn-container {
+    display: flex;
+    gap: 2rem;
+    margin: auto;
+}
+
+.btn {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--grey);
+    padding: 1rem 2rem;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-small {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--grey);
+    padding: 1rem 1.5rem;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--darker-grey);
+}
+
+.racers {
+    display: flex;
+    justify-content: center;
+    place-content: center;
+    position: relative;
+    margin: 5rem auto 0;
+    width: fit-content;
+}
+
+.snail-container {
+    border: 3px solid var(--grey);
+    border-radius: 10px;
+    height: 40rem;
+    width: 50rem;
+    overflow: scroll;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+
+.racer-title {
+    position: absolute;
+    top: -1rem;
+    left: -3rem;
+    transform: rotate(-12deg);
+}
+
+.heading-text {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+.white-header {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.snail {
+    border: 3px solid var(--grey);
+    border-radius: 10px;
+    width: 13rem;
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.snail h2 {
+    font-size: 1.2rem;
+    margin: 0 auto;
+}
+
+.snail-img {
+    width: 10rem;
+    margin: 0 auto;
+}
+
+.page-box {
+    border: 3px solid var(--grey);
+    border-radius: 10px;
+    height: 40rem;
+    width: 50rem;
+    margin: 5rem auto 0;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.page-box img, .page-box h2, .page-box .stats {
+    margin: 0 auto;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stats p {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.page-box > img {
+    width: 16rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+input[type='text'] {
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    border: 2px solid var(--grey);
+}
+
+form .btn {
+    max-width: 10rem;
+    margin-top: 1rem;
+}
+
+.race {
+    margin: 5rem auto 0;
+}
+
+.race-container {
+    display: flex;
+    gap: 2rem;
+    margin: 0 auto;
+    justify-content: center;
+    place-items: center;
+}
+
+.race-container > .btn {
+    height: 4rem;
+    width: 15rem;
+    font-size: 1.8rem;
+}
+
+.race > h2.heading-text {
+    margin: 0 auto;
+}
+
+.race-snail .heading-text {
+    font-size: 1.8rem;
+    margin: 0 auto;
+}
+
+.race-snail {
+    border: 3px solid var(--grey);
+    border-radius: 10px;
+    width: 20rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.result {
+    margin: 5rem auto 0;
+}
+
+.result > div {
+    margin: 0 auto;
+}
+
+.result img {
+    width: 16rem;
+    margin: 0 auto;
+}
+
+.result .btn {
+    max-width: 13rem;
+    margin: 0 auto;
+}
