@@ -17,12 +17,25 @@ router.get('/test/home', (req, res) => {
   res.render('home')
 })
 
-router.get('/test/snails', (req, res) => {
-  res.render('snails')
+router.get('/test/snails', async (req, res, next) => {
+  try{
+    const snails = await db.getAllSnails()
+    res.render('snails', snails)
+  } catch (e) {
+    next(e)
+  }
+  
 })
 
-router.get('/test/snail', (req, res) => {
-  res.render('snail-page')
+router.get('/test/snail/:id', async (req, res, next) => {
+  try{
+    const id = Number(req.params.id)
+    const snail = await db.getSnail(id)
+    res.render('snail-page', snail)
+  } catch (e) {
+    next(e)
+  }
+  
 })
 
 router.get('/test/snail/edit', (req, res) => {
