@@ -2,10 +2,13 @@
 
 <main class='result'>
   <div>
-    <h2 class='heading-text'>RACER NAME</h2>
+    <h2 class='heading-text'>{{name}}</h2>
     <h2 class='heading-text'>IS THE WINNER</h2>
   </div>
-  <img src='/snail.png' alt='The coolest snail on the block'>
-
+  {{#if image}}
+    <img src='{{image}}' class='snail-img' alt='An image of {{name}}'>
+  {{else}}
+    <img src='/snail.png' class='snail-img' alt='A really fast snail'>
+  {{/if}}
   <button class='btn'><a href='#'>Race Another?</a></button>
 </main>
