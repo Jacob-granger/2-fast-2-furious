@@ -1,30 +1,55 @@
 {{>header}}
 
 <main class='page-box'>
-  <img src='/snail.png' alt='The coolest snail on the block'>
-  <form>
-    <label>
-      Value
-      <input type='text'>
+  {{#if image}}
+    <img src='{{image}}' class='snail-img' alt='An image of {{name}}'>
+  {{else}}
+    <img src='/snail.png' class='snail-img' alt='A really fast snail'>
+  {{/if}}
+  <form method='post' action='#'>
+
+    <label style='display: none'>
+      Id
+      <input type='text' disabled value='{{id}}'>
     </label>
 
     <label>
-      Value
-      <input type='text'>
+      Image
+      <input type='text' name='image' value='{{image}}'>
     </label>
 
     <label>
-      Value
-      <input type='text'>
+      Name
+      <input type='text' name='name' value='{{name}}'>
     </label>
 
     <label>
-      Value
-      <input type='text'>
+      Top Speed
+      <input type='number' name='topSpeed' value='{{topSpeed}}'>
+    </label>
+
+    <label>
+      Engine Size
+      <input type='number' name='engineSize' value='{{engineSize}}'>
+    </label>
+
+    <label>
+      Cool Factor
+      <input type='number' name='coolFactor' value='{{coolFactor}}'>
+    </label>
+
+    <label>
+      Innovation
+      <input type='number' name='innovation' value='{{innovation}}'>
+    </label>
+
+    <label>
+      Year Launched
+      <input type='number' name='year' value='{{year}}'>
     </label>
 
 
-    <button class='btn'><a href='#'>Initialize</a></button>
+    <button type='submit' class='btn'>Initialize</button>
 
   </form>
 

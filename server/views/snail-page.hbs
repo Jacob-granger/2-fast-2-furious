@@ -1,13 +1,18 @@
 {{>header}}
 
 <main class='page-box'>
-  <img src='/snail.png' alt='The coolest snail on the block'>
-  <h2 class='heading-text'>RACER NAME</h2>
+  {{#if image}}
+    <img src='{{image}}' class='snail-img' alt='An image of {{name}}'>
+  {{else}}
+    <img src='/snail.png' class='snail-img' alt='The coolest snail on the block'>
+  {{/if}}
+  <h2 class='heading-text'>{{name}}</h2>
   <div class='stats'>
-    <p>Stat: Val</p>
-    <p>Stat: Val</p>
-    <p>Stat: Val</p>
-    <p>Stat: Val</p>
+    <p>Top Speed: {{topSpeed}}</p>
+    <p>Engine Size: {{engineSize}}</p>
+    <p>Cool Factor: {{coolFactor}}</p>
+    <p>Innovation: {{innovation}}</p>
+    <p>Year Launched: {{year}}</p>
   </div>
 
   <div class='btn-container'>
