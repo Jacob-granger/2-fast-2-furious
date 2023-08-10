@@ -219,6 +219,7 @@ form .btn {
 
 .race-container {
     display: flex;
+    flex-direction: row;
     gap: 2rem;
     margin: 0 auto;
     justify-content: center;
@@ -231,8 +232,19 @@ form .btn {
     font-size: 1.8rem;
 }
 
+.race-container label {
+    margin: auto;
+}
+
 .race > h2.heading-text {
     margin: 0 auto;
+}
+
+select.btn {
+    padding: 0.8rem 1rem;
+    text-align: center;
+    width: 12rem;
+    overflow: hidden;
 }
 
 .race-snail .heading-text {
