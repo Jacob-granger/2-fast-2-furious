@@ -31,6 +31,17 @@ main {
     place-self: flex-end;
 }
 
+.small {
+    font-size: 0.7rem;
+    width: 12rem;
+    margin: 0;
+}
+
+header {
+    padding: 1rem 3rem;
+    border-bottom: 3px solid var(--grey);
+}
+
 .main-img {
     max-width: 20rem;
     margin: 0 auto;
@@ -52,7 +63,7 @@ main {
     cursor: pointer;
 }
 
-.btn > a {
+a {
     color: inherit;
     text-decoration: none;
 }
