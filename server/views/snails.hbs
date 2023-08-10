@@ -6,14 +6,9 @@
       <div class='white-header'>
         <button class='btn-small racer-btn'><a href=''>Add snail</a></button>
       </div>
-      {{>snail}}
-      {{>snail}}
-      {{>snail}}
-      {{>snail}}
-      {{>snail}}
-      {{>snail}}
-      {{>snail}}
-      {{>snail}}
+      {{#each snails}}
+        {{>snail}}
+      {{/each}}
     </div>
   </div>
 </main>
