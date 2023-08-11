@@ -27,7 +27,7 @@ router.get('/snails', async (req, res, next) => {
   }
 })
 
-router.get('/test/snail/:id', async (req, res, next) => {
+router.get('/snail/:id', async (req, res, next) => {
   try{
     const id = Number(req.params.id)
     const snail = await db.getSnail(id)
