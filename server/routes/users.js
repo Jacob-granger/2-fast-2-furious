@@ -58,19 +58,23 @@ router.get('/test/snail/race', async (req, res, next) => {
 })
 
 router.post('/snail/race', async (req, res, next) => {
-  const raceFormResult = req.body
+  const { racer1, racer1Attribute, racer2, racer2Attribute } = req.body
+
   try {
-    const val1 = await getSnailAttribute(
-      req.body.racer1,
+    const val1 = await db.getSnailAttribute(
+      Number(req.body.racer1),
       req.body.racer1Attribute
     )
-    const val2 = await getSnailAttribute(
-      req.body.racer2,
+    console.log(val1)
+    const val2 = await db.getSnailAttribute(
+      Number(req.body.racer2),
       req.body.racer2Attribute
     )
+    console.log(val2)
   } catch (e) {
     next(e)
   }
+  // checkForWinner(vale1[0][racer1Attribute], racer2Attribute)
 })
 
 router.get('/test/snail/race-result', (req, res) => {
