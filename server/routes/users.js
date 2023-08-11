@@ -31,7 +31,18 @@ router.get('/test/snail/:id', async (req, res, next) => {
   try{
     const id = Number(req.params.id)
     const snail = await db.getSnail(id)
-    res.render('snail-page', snail)
+
+    const snailData = {
+      id: snail.id,
+      name: snail.name,
+      topSpeed: snail.top_speed,
+      engineSize: snail.engine_size,
+      coolFactor: snail.cool_factor,
+      innovation: snail.innovation,
+      year: snail.year_launched
+    }
+
+    res.render('snail-page', snailData)
   } catch (e) {
     next(e)
   }
