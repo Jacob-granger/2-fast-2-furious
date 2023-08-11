@@ -11,7 +11,7 @@ export async function getAllSnails() {
 
 export async function getSnail(id) {
   return connection('snails')
-    .join('races', 'snails.id', 'races.winner_id')
+    .leftJoin('races', 'snails.id', 'races.winner_id')
     .select('*', 'snails.id AS id')
     .count('* as winCount')
     .groupBy('snails.id')
@@ -25,4 +25,8 @@ export async function getSnail(id) {
 
 export function getSnailAttribute(id, attribute) {
   return connection('snails').where('id', id).select(attribute)
+}
+
+export function addRaceWinner(raceWinner) {
+  return connection('races').insert(raceWinner)
 }

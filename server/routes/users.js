@@ -20,14 +20,13 @@ router.get('/', (req, res) => {
 router.get('/snails', async (req, res, next) => {
   try {
     const snails = await db.getAllSnails()
-    console.log(snails)
     res.render('snails', { snails })
   } catch (e) {
     next(e)
   }
 })
 
-router.get('/test/snail/race', async (req, res, next) => {
+router.get('/snail/race', async (req, res, next) => {
   try {
     const racers = await db.getAllSnails()
 
@@ -47,6 +46,62 @@ router.get('/test/snail/race', async (req, res, next) => {
   }
 })
 
+// stretch
+// router.get('/test/snail/edit', (req, res) => {
+//   res.render('snail-edit')
+// })
+
+// // stretch
+// router.get('/test/snail/new', (req, res) => {
+//   res.render('snail-new.hbs')
+// })
+
+router.post('/snail/race', async (req, res, next) => {
+  const {
+    racer1,
+    racer1Attribute,
+    racer2,
+    racer2Attribute,
+    raceName,
+    raceLocation,
+  } = req.body
+  let player1 = {
+    id: racer1,
+  }
+  let player2 = {
+    id: racer2,
+  }
+  try {
+    const val1 = await db.getSnailAttribute(
+      Number(req.body.racer1),
+      req.body.racer1Attribute
+    )
+    player1.value = val1[0][racer1Attribute]
+
+    const val2 = await db.getSnailAttribute(
+      Number(req.body.racer2),
+      req.body.racer2Attribute
+    )
+    player2.value = val2[0][racer2Attribute]
+    const winnerId = checkForWinner(player1, player2)
+    const raceWinner = {
+      race_name: raceName,
+      location: raceLocation,
+      winner_id: winnerId,
+    }
+    await db.addRaceWinner(raceWinner)
+    res.redirect(`/snail/race-result/${winnerId}`)
+  } catch (e) {
+    next(e)
+  }
+})
+
+router.get('/snail/race-result/:id', async (req, res) => {
+  const id = Number(req.params.id)
+  const winner = await db.getSnail(id)
+  res.render('race-result', winner)
+})
+
 router.get('/snail/:id', async (req, res, next) => {
   try {
     const id = Number(req.params.id)
@@ -55,6 +110,7 @@ router.get('/snail/:id', async (req, res, next) => {
     const snailData = {
       id: snail.id,
       name: snail.name,
+      image: snail.image,
       topSpeed: snail.top_speed,
       engineSize: snail.engine_size,
       coolFactor: snail.cool_factor,
@@ -69,45 +125,11 @@ router.get('/snail/:id', async (req, res, next) => {
   }
 })
 
-// stretch
-// router.get('/test/snail/edit', (req, res) => {
-//   res.render('snail-edit')
-// })
-
-// // stretch
-// router.get('/test/snail/new', (req, res) => {
-//   res.render('snail-new.hbs')
-// })
-
-router.post('/snail/race', async (req, res, next) => {
-  const { racer1, racer1Attribute, racer2, racer2Attribute } = req.body
-
-  try {
-    const val1 = await db.getSnailAttribute(
-      Number(req.body.racer1),
-      req.body.racer1Attribute
-    )
-    console.log(val1)
-    const val2 = await db.getSnailAttribute(
-      Number(req.body.racer2),
-      req.body.racer2Attribute
-    )
-    console.log(val2)
-  } catch (e) {
-    next(e)
-  }
-  // checkForWinner(vale1[0][racer1Attribute], racer2Attribute)
-})
-
-router.get('/test/snail/race-result', (req, res) => {
-  res.render('race-result')
-})
-
-function checkForWinner(val1, val2) {
-  if (val1 > val2) {
-    return 'Player 1 wins'
+function checkForWinner(player1, player2) {
+  if (player1.value > player2.value) {
+    return player1.id
   } else {
-    return 'Player 2 wins'
+    return player2.id
   }
 }
 
