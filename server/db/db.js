@@ -11,9 +11,11 @@ export async function getAllSnails() {
 
 export async function getSnail(id) {
   return connection('snails')
-  .where('id', id)
-  .first()
-  //Add join
+    .join('races', 'snails.id', 'races.winner_id')
+    .select('*', 'snails.id AS id').count('* as winCount')
+    .groupBy('snails.id')
+    .where('snails.id', id)
+    .first()
 }
 
 // export function getAllRacers() {
