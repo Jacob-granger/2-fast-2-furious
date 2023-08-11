@@ -11,19 +11,25 @@ export async function getAllSnails() {
 
 export async function getSnail(id) {
   return connection('snails')
+
     .join('races', 'snails.id', 'races.winner_id')
-    .select('*', 'snails.id AS id').count('* as winCount')
+    .select('image',
+      'top_speed as topSpeed',
+      'engine_size as engineSize',
+      'cool_factor as coolFactor',
+      'innovation',
+      'year_launched as year',
+      'name', 'snails.id AS id').count('* as winCount')
     .groupBy('snails.id')
     .where('snails.id', id)
     .first()
+
 }
 
 // export function getAllRacers() {
 //   return connection('snails').select('name')
 // }
 
-export function  getSnailAttribute(id, attribute) {
-  return connection('snails')
-  .where('id', id)
-  .select(attribute)
+export function getSnailAttribute(id, attribute) {
+  return connection('snails').where('id', id).select(attribute)
 }

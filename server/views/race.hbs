@@ -30,12 +30,14 @@
       <label>
         <!-- retains visibility for screenreaders-->
         <span style='height: 0; overflow: hidden'>ATTRIBUTE:</span>
-        <select name='racer1Attribute' class='btn'>
-          <option value='' selected>Attribute</option>
-          {{#each attributes}}
-            <option value='{{name}}'>{{name}}</option>
-          {{/each}}
-        </select>
+
+      <select name='racer1Attribute' class='btn'>
+        <option value='' selected>Attribute</option>
+        {{#each attributes}}
+          <option value='{{this}}'>{{this}}</option>
+        {{/each}}
+      </select>
+
       </label>
     </div>
 
@@ -60,7 +62,7 @@
         <select name='racer2Attribute' class='btn'>
           <option value='' selected>Attribute</option>
           {{#each attributes}}
-            <option value='{{name}}'>{{name}}</option>
+            <option value='{{this}}'>{{this}}</option>
           {{/each}}
         </select>
       </label>
