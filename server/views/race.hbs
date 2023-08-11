@@ -3,7 +3,16 @@
 <main class='race'>
   <h2 class='heading-text'>READY, SET...</h2>
 
-  <form class='race-container' method='post' action='/snail/race'>
+  <form method='post' action='/snail/race'>
+    <div class='race-input'>
+      <label for=''>Race name
+        <input type='text' name='raceName'>
+      </label>
+      <label for=''>Location
+        <input type='text' name='raceLocation'>
+      </label>
+    </div>
+    <div class='race-container'>
     <div class='race-snail'>
       <img src='/snail.png' class='snail-img' alt='A really fast snail'>
       <h3 class='heading-text'>RACER 1</h3>
@@ -21,12 +30,14 @@
       <label>
         <!-- retains visibility for screenreaders-->
         <span style='height: 0; overflow: hidden'>ATTRIBUTE:</span>
+
       <select name='racer1Attribute' class='btn'>
         <option value='' selected>Attribute</option>
         {{#each attributes}}
           <option value='{{this}}'>{{this}}</option>
         {{/each}}
       </select>
+
       </label>
     </div>
 
@@ -56,7 +67,7 @@
         </select>
       </label>
     </div>
-
+    </div>
   </form>
 
 </main>

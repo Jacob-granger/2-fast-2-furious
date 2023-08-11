@@ -287,3 +287,15 @@ select.btn {
     max-width: 13rem;
     margin: 0 auto;
 }
+
+.race-input {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 20rem;
+    margin: -2rem auto 2.5rem;
+}
+
+.race-input input[type='text'] {
+    padding: 0.5rem;
+}
