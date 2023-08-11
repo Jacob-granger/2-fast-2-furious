@@ -26,3 +26,7 @@ export async function getSnail(id) {
 export function getSnailAttribute(id, attribute) {
   return connection('snails').where('id', id).select(attribute)
 }
+
+export function addRaceWinner(raceWinner) {
+  return connection('races').insert(raceWinner)
+}
