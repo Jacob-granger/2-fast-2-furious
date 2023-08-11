@@ -39,7 +39,8 @@ router.get('/test/snail/:id', async (req, res, next) => {
       engineSize: snail.engine_size,
       coolFactor: snail.cool_factor,
       innovation: snail.innovation,
-      year: snail.year_launched
+      year: snail.year_launched,
+      winCount: snail.winCount ?? 0,
     }
 
     res.render('snail-page', snailData)
