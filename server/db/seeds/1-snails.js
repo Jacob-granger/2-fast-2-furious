@@ -7,7 +7,7 @@ export async function seed(knex) {
     {
       id: 1,
       name: 'Turbo',
-      image: 'https://static.wikia.nocookie.net/turbo-dreamworks/images/0/08/9A4D8394-0C07-43FC-AF61-EDF664C4E8E3.png/revision/latest?cb=20190303043104',
+      image: 'https://i.ebayimg.com/images/g/LkoAAOSws21iIOGs/s-l500.jpg',
       top_speed: 26,
       engine_size: 3.5,
       cool_factor: 25,
@@ -17,7 +17,7 @@ export async function seed(knex) {
     {
       id: 2,
       name: 'Skidmark',
-      image: 'https://static.wikia.nocookie.net/turbo-dreamworks/images/7/78/Image.jpg/revision/latest?cb=20140412042957',
+      image: 'https://avatars.mds.yandex.net/get-mpic/5323357/img_id6505699992863712973.jpeg/orig',
       top_speed: 99,
       engine_size: 1.2,
       cool_factor: 312,
@@ -27,7 +27,7 @@ export async function seed(knex) {
     {
       id: 3,
       name: 'Whiplash',
-      image: 'https://static.wikia.nocookie.net/turbo-dreamworks/images/1/19/Whiplash.jpg/revision/latest?cb=20130721184057',
+      image: 'https://m.media-amazon.com/images/I/91IDN+AePyL._AC_UF894,1000_QL80_.jpg',
       top_speed: 14,
       engine_size: 5.0,
       cool_factor: 5,
@@ -37,7 +37,7 @@ export async function seed(knex) {
     {
       id: 4,
       name: 'White Shadow',
-      image: 'https://static.wikia.nocookie.net/turbo-dreamworks/images/7/7d/White_Shadow.jpg/revision/latest?cb=20130929033722',
+      image: 'https://ae01.alicdn.com/kf/HTB1vwpGKFXXXXa_XFXXq6xXFXXXQ/6design-design-D-white-shadow-19cm-turbo-snail-plush-toy.jpg',
       top_speed: 10,
       engine_size: 10.0,
       cool_factor: 82,
@@ -47,7 +47,7 @@ export async function seed(knex) {
     {
       id: 5,
       name: 'DJ Dr. Smoove Moove',
-      image: 'https://static.wikia.nocookie.net/turbo-dreamworks/images/3/31/F2B3C3AF-0365-447B-BB2B-2FC99960C834.png/revision/latest?cb=20190303045648',
+      image: 'https://ae01.alicdn.com/kf/HTB12S13IFXXXXXDXpXXq6xXFXXXT/30CM-3D-Turbo-Smoove-Move-Green-Color-Movie-Stuffed-Animal-Toys-Cool-Turbo-Snail-Plush-Toys.jpg',
       top_speed: 99,
       engine_size: 1.4,
       cool_factor: 99,
