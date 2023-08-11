@@ -28,7 +28,6 @@
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
     "knex": "^2.3.0",
-    "nodemon": "^2.0.15",
     "sqlite3": "^5.1.2"
   },
   "devDependencies": {
@@ -43,7 +42,8 @@
     "jsdom": "^22.1.0",
     "prettier": "2.6.1",
     "supertest": "^6.2.2",
-    "vitest": "^0.33.0"
+    "vitest": "^0.33.0",
+    "nodemon": "^2.0.15"
   },
   "eslintConfig": {
     "extends": "@devacademy"
